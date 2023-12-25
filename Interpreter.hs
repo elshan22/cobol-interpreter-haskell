@@ -303,15 +303,15 @@ evaluateDivStatement (DivideInto exp (ListVariable var expr)) env = let idx = (g
                 Evaluated NothingValue (updateEnv env var (listChange (searchEnv env var) idx
                 (divideValues (listQuery (searchEnv env var) idx) (getValue $ evaluateExpression exp env))))
 evaluateDivStatement (DivideGiving exp1 exp2 (NormalVariable var)) env = Evaluated NothingValue (updateEnv env var (divideValues
-                (getValue $ evaluateExpression exp1 env) (getValue $ evaluateExpression exp2 env)))
+                (getValue $ evaluateExpression exp2 env) (getValue $ evaluateExpression exp1 env)))
 evaluateDivStatement (DivideGiving exp1 exp2 (ListVariable var expr)) env = let idx = (getValue $ evaluateExpression expr env) in
                 Evaluated NothingValue (updateEnv env var (listChange (searchEnv env var) idx
-                (divideValues (getValue $ evaluateExpression exp1 env) (getValue $ evaluateExpression exp2 env))))
+                (divideValues (getValue $ evaluateExpression exp2 env) (getValue $ evaluateExpression exp1 env))))
 evaluateDivStatement (DivideRemainder exp1 exp2 (NormalVariable var)) env = Evaluated NothingValue (updateEnv env var (modValues
-                (getValue $ evaluateExpression exp1 env) (getValue $ evaluateExpression exp2 env)))
+                (getValue $ evaluateExpression exp2 env) (getValue $ evaluateExpression exp1 env)))
 evaluateDivStatement (DivideRemainder exp1 exp2 (ListVariable var expr)) env = let idx = (getValue $ evaluateExpression expr env) in
                 Evaluated NothingValue (updateEnv env var (listChange (searchEnv env var) idx
-                (modValues (getValue $ evaluateExpression exp1 env) (getValue $ evaluateExpression exp2 env))))
+                (modValues (getValue $ evaluateExpression exp2 env) (getValue $ evaluateExpression exp1 env))))
 -- TODO: WRITE YOUR CODE HERE
 
 -- You should change the below code so if the expression datatype doesn't match the variable datatype,
