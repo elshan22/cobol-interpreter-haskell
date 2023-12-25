@@ -13,6 +13,8 @@ data Evaluated
 valueToString :: Value -> String
 valueToString (StrValue x) = x
 valueToString (NumValue x) = show x
+valueToString (StrList n l) = show l
+valueToString (NumList n l) = show l
 
 valueToNumber :: Value -> Float
 valueToNumber (StrValue x) = read x
