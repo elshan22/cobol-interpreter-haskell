@@ -89,8 +89,8 @@ Each function can be called with its name and its arguments in a parenthesis:
 10
 >> add (3, 23.4)
 26.4
->> add ('Hello', 'World!')
-Hello World!
+>> add ('Hell', 'o, World!')
+Hello, World!
 ```
 
 #### MOVE
@@ -243,7 +243,7 @@ PERFORM paragraph1 -> executes the paragraph1 paragraph.
 ```
 
 #### DISPLAY
-This statement takes an expression and prints it in the output:
+This statement takes an expression and prints it in the output (in a newline):
 ```
 DISPLAY [EXPRESSION]
 ```
