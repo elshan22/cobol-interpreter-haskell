@@ -1,0 +1,58 @@
+IDENTIFICATION DIVISION.
+    PROGRAM-ID. myProgram
+DATA DIVISION.
+    WORKING-STORAGE SECTION.
+        01 x PIC S9 VALUE -1.
+        01 r PIC S9.
+        05 y PIC A.
+        02 result PIC S9 VALUE 1.
+        10 array PIC S9.
+PROCEDURE DIVISION.
+
+    hello.
+        DISPLAY 'hello'.
+        EXIT.
+        DISPLAY 'hi'.
+        
+    main.
+        FUNCTION func = n => (x < 0)? n*n : n.
+
+        DISPLAY func(x).
+        MULTIPLY 2 BY x.
+        DISPLAY func(x).
+
+        MOVE 3 TO x,r.
+        DISPLAY r.
+        FUNCTION func2 = n, y => (x EQUALS -1)? n + y : (y EQUALS 4 OR x EQUALS 10)? n*n: y*y.
+
+        DISPLAY (func2(2, 2) + func2(1, 4)).
+
+        PERFORM VARYING i FROM 0 TO 5
+            PERFORM VARYING j FROM 0 TO i+1
+                ADD 'x' TO y[i].
+            END-PERFORM.
+        END-PERFORM.
+
+        PERFORM VARYING i FROM 0 TO 10 BY 2
+            DISPLAY y[i/2].
+        END-PERFORM.
+
+        DIVIDE 7.5, 6 GIVING result[1].
+        DISPLAY result[1].
+
+        DIVIDE 6.6 INTO 4.1 REMAINDER result[0].
+        DISPLAY result[0].
+
+        PERFORM VARYING i FROM 0 TO 10
+            COMPUTE array[i] = i * i.
+        END-PERFORM. 
+
+        FUNCTION firstAndLast = a => a[0] + a[9].
+
+        DISPLAY firstAndLast(array).
+        ADD array[5] TO array[0].
+        ADD array[5] TO array[9].
+        DISPLAY firstAndLast(array).
+        PERFORM hello.
+        DISPLAY array.
+END PROGRAM. myProgram
