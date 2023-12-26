@@ -6,7 +6,7 @@ Each program, has 3 Divisions:
 2. DATA DIVISION
 3. PROCEDURE DIVISION
 
-In the end of the program you can either use an end program statement to indicate the end of the program in the following syntax:
+In the end of the program you can use an end program statement to indicate the end of the program in the following syntax:
 ```
 END PROGRAM . [PROGRAM_NAME]
 ```
